@@ -1,4 +1,4 @@
-﻿1. Biến số: có thể thay đổi giá trị và kiểu dữ liệu
+﻿   1. Biến số: có thể thay đổi giá trị và kiểu dữ liệu
     $x = 123;
     $x = "abc";
     echo $x;
@@ -12,7 +12,7 @@
     echo $lastName;
     Sử dụng dấu . để ghép chuỗi
     echo $firstName . $lastName;
-    echo $firstName . ' ' .$lastName;
+    echo $firstName . ' ' . $lastName;
 
     3. Các kiểu dữ liệu: String, Numberic, Boolean, Null, Array, Object...
     Kiểm tra kiểu dữ liệu:
@@ -29,3 +29,9 @@
     settype($number, "integer");
     echo $number;
     echo (int)$number;
+    
+    5. Hằng số: không thể thay đổi giá trị và kiểu dữ liệu
+    define("PI", 3.14);
+    echo PI;
+    define("subcribe", "Tủ Sách Vàng");
+    echo subcribe;
