@@ -1,0 +1,31 @@
+﻿1. Biến số: có thể thay đổi giá trị và kiểu dữ liệu
+    $x = 123;
+    $x = "abc";
+    echo $x;
+
+    2. Khai báo biến: Chữ HOA, chữ thường, chữ số, dấu _ bắt đầu bằng dấu $
+    Tên biến không có khoảng trắng, phân biệt chữ HOA, chữ thường
+    $firstName = "John";
+    $lastName = "Smith";
+    $number = 123;
+    echo $firstName;
+    echo $lastName;
+    Sử dụng dấu . để ghép chuỗi
+    echo $firstName . $lastName;
+    echo $firstName . ' ' .$lastName;
+
+    3. Các kiểu dữ liệu: String, Numberic, Boolean, Null, Array, Object...
+    Kiểm tra kiểu dữ liệu:
+    var_dump($firstName);
+    var_dump($number);
+    echo gettype($firstName);
+    echo gettype($number);
+    echo is_numeric($number);
+    echo is_numeric($firstName);
+
+    4. Ép kiểu dữ liệu:
+    $number = 12.34;
+    echo $number;
+    settype($number, "integer");
+    echo $number;
+    echo (int)$number;
