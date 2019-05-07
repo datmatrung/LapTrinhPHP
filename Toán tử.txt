@@ -5,7 +5,7 @@
     $y = -$x;
     $y = $x / 2;
     $y = $x % 2;
-    echo $y;
+    echo "y = " . $y;
 
     2. Toán tử gán: = += -= *= /= %= ++ --
     $x = 10;
@@ -13,8 +13,8 @@
     $x *= 5;
     $x += 1;
     $x++;
-    ++$x;
-    echo $x;
+    --$x;
+    echo "x = " . $x;
 
     * Phân biệt $x++ và ++$x
     $x = 10;
@@ -24,9 +24,11 @@
     echo "y = " . $y;
 
     3. Toán tử điều kiện: (condition) ? (value1) : (value2);
-    $n = 12;
+    $n = 10;
+    $n = -10;
+    $n = 0;
     echo ($n >= 0) ? "Số dương" : "Số âm";
-    echo ($n >= 0) ? "Số dương" : (($n < 0) ? "Số âm" : "Số không");
+    echo ($n > 0) ? "Số dương" : (($n < 0) ? "Số âm" : "Số không");
 
     4. Toán tử so sánh: > < >= <= == === != <> !===
     $x = 10;
@@ -34,17 +36,18 @@
     echo ($x > $y) ? "True" : "False";
     echo ($x < $y) ? "True" : "False";
     echo ($x <> $y) ? "True" : "False";
+    echo ($x == $y) ? "True" : "False";
 
     * Phân biệt == và ===
     $x = 10;
     $y = "10";
     echo ($x == $y) ? "True" : "False";
     echo ($x === $y) ? "True" : "False";
-    
+
     5. Toán tử logic: && || ! and or xor
     $x = 10;
     $y = 8;
     echo ($x > 1 && $y < 5) ? "True" : "False";
     echo ($x > 1 || $y < 5) ? "True" : "False";
-    echo ($x > 1 xor $y < 5) ? "True" : "False";
-    echo !($x > 1 xor $y < 5) ? "True" : "False";
+    echo ($x > 1 xor $y > 5) ? "True" : "False";
+    echo !($x > 1 xor $y > 5) ? "True" : "False";
