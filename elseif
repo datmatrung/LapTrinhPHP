@@ -1,0 +1,9 @@
+<?php  
+    $a = 10;
+    if ($a===10):
+        echo "a bang 10";
+    elseif ($a > 10):
+        echo "a lon hon 10";
+    elseif ($a < 10):
+        echo "a nho hon 10";
+    endif;
