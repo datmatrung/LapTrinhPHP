@@ -1,0 +1,49 @@
+    1. Cấu trúc IF ELSE
+    $number = 10;
+    if ($number % 2 == 0){
+        echo 'Số chẵn';
+    } else {
+        echo 'Số lẻ';
+    }
+
+    * Cách viết ngắn gọn:
+    echo ($number % 2 == 0) ? 'Số chẵn' : 'Số lẻ';
+
+    2. Cấu trúc SWITCH CASE:
+    $x = 3;
+    switch($x){
+        case 3:
+            echo 'Ba' . '<br/>'; break;
+        case 2:
+            echo 'Hai' . '<br/>'; break;
+        case 1:
+            echo 'Một' . '<br/>'; break;
+        default:
+            echo 'Không hợp lệ';
+    }
+
+    * Khai báo mảng:
+    $arr = array(1, 2, 3, "Hello", 5);
+    $arr = [1, 2, 3, "Hello", 5];
+
+    3. Vòng lặp FOR:
+    for($i = 0; $i < count($arr); $i++){
+        echo $arr[$i] . '<br/>';
+    }
+
+    * Cách viết mới FOREACH:
+    foreach ($arr as $item){
+        echo $item . '<br/>';
+    }
+    
+    4. Vòng lặp WHILE và DO WHILE:
+    $i = 5;
+    while($i > 0){
+        echo $i . '<br/>';
+        $i--;
+    }
+
+    do {
+        echo $i . '<br/>';
+        $i--;
+    } while ($i > 0);
