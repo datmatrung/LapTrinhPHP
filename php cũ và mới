@@ -40,5 +40,16 @@
     $arr[] = "D";
     $arr[] = "E";
     print_r($arr);
+    
+    $arr1 = ["nguyen","truong","ngoc"];
+    echo $arr1[0];
+
+//  Mảng key => value
+    $arr2 = ["a"=>"nguyen","b"=>"truong","c"=>"ngoc"];
+    echo $arr2["a"];
+
+    foreach ($arr2 as $key => $value):
+        echo $key . '=>' . $value .'<br/>';
+    endforeach;
 </body>
 </html>
