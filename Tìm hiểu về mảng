@@ -1,0 +1,33 @@
+    1. Khai báo mảng
+    $arr = ["A", "B", "C"];
+    echo $arr[0] . '<br/>';
+    echo $arr[1] . '<br/>';
+    echo $arr[2] . '<br/>';
+
+    2. Duyệt mảng:
+    print_r($arr);
+    
+    $length = count($arr);
+    for ($i=0; $i<$length; $i++):
+        echo $arr[$i] . '<br/>';
+    endfor;
+    
+    foreach ($arr as $item):
+        echo $item . '<br/>';
+    endforeach;
+
+    3. Thêm phần tử vào cuối mảng:
+    $arr[] = "D";
+    $arr[] = "E";
+    print_r($arr);
+
+    4. Mảng key => value (Bảo mật)
+    $arr1 = ["Tủ","Sách","Vàng"];
+    echo $arr1[0];
+
+    $arr2 = ["T"=>"Tủ","S"=>"Sách","V"=>"Vàng"];
+    echo $arr2["a"];
+
+    foreach ($arr2 as $key => $value):
+        echo $key . '=>' . $value .'<br/>';
+    endforeach;
