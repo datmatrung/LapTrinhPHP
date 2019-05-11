@@ -1,14 +1,14 @@
-$a=100; // Global variable
+    $a=100; // Global variable
     $b=50;
-    Hàm không trả về giá trị
+    1. Hàm không trả về giá trị
     function cong2So()
     {
         $num1 = 10; // Local variable
         $num2 = 5;
-        echo 'Cộng 2 số = ' . ($num1 + $num2) . '<br/>';
+        echo 'Tổng hai số = ' . ($num1 + $num2) . '<br/>';
     }
     cong2So();
-    Hàm có trả về giá trị
+    2. Hàm có trả về giá trị
     function tru2So()
     {
         $num3 = 20;
@@ -18,10 +18,11 @@ $a=100; // Global variable
     $bientam = tru2So();
     echo $bientam;
 
+    3. Biến cục bộ và biến toàn cục:
     function nhan2So()
     {
         global $a, $b; // Khai báo sử dụng biến toàn cục
-        echo $a * $b;
+        echo 'Tích hai số = ' . ($a * $b) . '<br/>';
     }
     nhan2So();
 
@@ -29,7 +30,7 @@ $a=100; // Global variable
     {
         global $a, $b;
         $a = 150;   // Biến toàn cục bị thay đổi
-        echo $a/$b . '<br/>';
+        echo 'Chia hai số = ' . ($a / $b) . '<br/>';;
     }
     chia2So();
     echo $a;
@@ -37,7 +38,7 @@ $a=100; // Global variable
     function suDungThamSo($a, $b)
     {   // $a của hàm = $a toàn cục
         $a=3000;    // Biến toàn cục không bị thay đổi
-        echo $a + $b;
+        echo ($a + $b) . "<br/>";
     }
     suDungThamSo($a, $b); // Truyền $a, $b toàn cục vào hàm
     echo $a;
