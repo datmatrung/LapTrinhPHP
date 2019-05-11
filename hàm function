@@ -1,0 +1,52 @@
+$a=100; // Global variable
+    $b=50;
+    Hàm không trả về giá trị
+    function cong2So()
+    {
+        $num1 = 10; // Local variable
+        $num2 = 5;
+        echo 'Cộng 2 số = ' . ($num1 + $num2) . '<br/>';
+    }
+    cong2So();
+    Hàm có trả về giá trị
+    function tru2So()
+    {
+        $num3 = 20;
+        $num4 = 15;
+        return $num3 - $num4;
+    }
+    $bientam = tru2So();
+    echo $bientam;
+
+    function nhan2So()
+    {
+        global $a, $b; // Khai báo sử dụng biến toàn cục
+        echo $a * $b;
+    }
+    nhan2So();
+
+    function chia2So()
+    {
+        global $a, $b;
+        $a = 150;   // Biến toàn cục bị thay đổi
+        echo $a/$b . '<br/>';
+    }
+    chia2So();
+    echo $a;
+
+    function suDungThamSo($a, $b)
+    {   // $a của hàm = $a toàn cục
+        $a=3000;    // Biến toàn cục không bị thay đổi
+        echo $a + $b;
+    }
+    suDungThamSo($a, $b); // Truyền $a, $b toàn cục vào hàm
+    echo $a;
+
+    function koCanTruyenThamSoMacDinh()
+    {
+        foreach (func_get_args() as $value): // Hàm lấy danh sách các tham số truyền vào
+            echo $value . '<br/>';
+        endforeach;
+    }
+    koCanTruyenThamSoMacDinh(1,2,3,4,5,6);
+    koCanTruyenThamSoMacDinh(7,8,9);
