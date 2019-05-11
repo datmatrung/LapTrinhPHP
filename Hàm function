@@ -30,7 +30,7 @@
     {
         global $a, $b;
         $a = 150;   // Biến toàn cục bị thay đổi
-        echo 'Chia hai số = ' . ($a / $b) . '<br/>';;
+        echo 'Chia hai số = ' . ($a / $b) . '<br/>';
     }
     chia2So();
     echo $a;
