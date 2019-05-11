@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>bang cuu chuong</title>
+</head>
+<body>
+<form action="BangCuuChuong.php" method="get">
+<lable for="cuuchuong">nhap bang cuu chuong</lable> <br/>
+<input name="cuuchuong" type="number" min="2" max="10"><hr/>
+<input type="submit" value="in bang cuu chuong">
+</form>
+
+<!--in bang cuu chuong them giao dien cach 2-->
+<?php if(isset($_GET['cuuchuong'])): ?>
+
+<table border="1" cellspacing="0">
+
+<?php for ($i=1; $i<=10; $i++): ?>
+
+<tr>
+<td>
+
+<?php echo $_GET['cuuchuong'] . ' * ' . $i . ' = ' . $_GET['cuuchuong']*$i ; ?>
+
+</td></tr>
+
+<?php endfor; ?>
+
+</table>
+
+<?php endif; ?>
+
+</body>
+</html>
+
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>bang cuu chuong</title>
+</head>
+<body>
+<form action="BangCuuChuong.php" method="get">
+<lable for="cuuchuong">nhap bang cuu chuong</lable> <br/>
+<input name="cuuchuong" type="number" min="2" max="10"><hr/>
+<input type="submit" value="in bang cuu chuong">
+</form>
+
+<!--in bang cuu chuong-->
+<?php
+if(isset($_GET['cuuchuong'])):
+for ($i=1; $i<=10; $i++):
+echo $i * $_GET['cuuchuong'] . '<br/>';
+endfor;
+endif;
+?>
+<!--in bang cuu chuong them giao dien cach 1-->
+<?php
+if(isset($_GET['cuuchuong'])):
+echo '<table border=1 cellspacing="0">';
+for ($i=1; $i<=10; $i++):
+echo '<tr><td>' ;
+echo $_GET['cuuchuong'] . ' * ' . $i . ' = ' . $_GET['cuuchuong']*$i ;
+echo '</tr></td>';
+endfor;
+echo '</table>';
+endif;
+?>
+
+</body>
+</html>
+
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+</head>
+<body>
+<form action="index.php" method="post">
+<label for"fullname">Enter FullName</label><br/>
+<input type="text" name="fullname"><br/>
+<label for"age">Enter Age</label><br/>
+<input type="number" name="age" min="10" max="100"><hr/>
+<input type="submit" value="send info">
+</form>
+
+<?php
+
+if ($_SERVER['REQUEST_METHOD']==='POST') :
+$getName = $_POST['fullname'];
+$getAge = $_POST['age'];
+echo 'xin chao ' . $getName . '<br/>';
+echo 'ban co tuoi = ' . $getAge . '<br/>';
+endif;
+?>
+
+</body>
+</html>
