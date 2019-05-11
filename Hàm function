@@ -35,6 +35,7 @@
     chia2So();
     echo $a;
 
+    4. Truyền tham số:
     function suDungThamSo($a, $b)
     {   // $a của hàm = $a toàn cục
         $a=3000;    // Biến toàn cục không bị thay đổi
@@ -43,9 +44,11 @@
     suDungThamSo($a, $b); // Truyền $a, $b toàn cục vào hàm
     echo $a;
 
+    5. Truyền tham số tùy ý:
     function koCanTruyenThamSoMacDinh()
     {
-        foreach (func_get_args() as $value): // Hàm lấy danh sách các tham số truyền vào
+        foreach (func_get_args() as $value):
+            // Hàm lấy danh sách các tham số truyền vào
             echo $value . '<br/>';
         endforeach;
     }
