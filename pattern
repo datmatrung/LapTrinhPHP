@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form đăng ký</title>
+</head>
+<body>
+    <form>
+        <label>Mã sân bay:</label><br/>
+        <input type="text" name="sanbay" pattern="[A-Z a-z]{3}" title="Nhập mã sân bay có ba ký tự"><br/>
+        <input type="submit" value="Đặt vé">
+    </form>
+
+    <form>
+        <label>Password:</label><br/>
+        <input type="password" name="password" pattern=".{6,}" title="Nhập mật khẩu từ sáu ký tự trở lên"><br/>
+        <input type="submit" value="Đăng ký">
+    </form>
+
+    <form>
+        <label>Password:</label><br/>
+        <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Nhập mật khẩu trên 8 ký tự kết hợp chữ hoa, chữ thường và chữ số"><br/>
+        <input type="submit" value="Đăng ký">
+    </form>
+
+    <form>
+        <label>E-mail:</label><br/>
+        <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="email@domain.com" title="Nhập đúng email"><br/>
+        <input type="submit" value="Gửi email">
+    </form>
+
+    <form>
+        <label>Liên kết website:</label><br/>
+        <input type="url" name="website" pattern="https?://.+" title="Bắt đầu với http hoặc https"><br/>
+        <input type="submit" value="Gửi trang web">
+    </form>
+
+    <form>
+        <label>Tìm kiếm:</label><br/>
+        <input type="search" name="search" pattern="[^'\x22]+" title="Không có dấu nháy">
+        <input type="submit" value="Tìm kiếm">
+    </form>
+
+    <form>
+        <label>Ngày khởi hành:</label><br/>
+        <input type="text" name="date" placeholder="dd/mm/yyyy" pattern="(31[\/.](0[13578]|1[02])[\/.](18|19|20)[0-9]{2})|((29|30)[\/.](01|0[3-9]|1[1-2])[\/.](18|19|20)[0-9]{2})|((0[1-9]|1[0-9]|2[0-8])[\/.](0[1-9]|1[0-2])[\/.](18|19|20)[0-9]{2})|(29[\/.](02)[\/.](((18|19|20)(04|08|[2468][048]|[13579][26]))|2000))" title="Nhập đúng kiểu dd/mm/yyyy"><br/>
+        <input type="submit" value="Đặt vé">
+    </form>
+
+</body>
+</html>
