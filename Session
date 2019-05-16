@@ -1,0 +1,50 @@
+<?php
+    session_start();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="get" >
+        <label>Họ và tên:</label><br/>
+        <input type="text" name="name"><br/>
+        <label>Tuổi:</label><br/>
+        <input type="number" name="age">
+        <hr/>
+        <input type="submit" value="Submit">
+    </form>
+    <?php
+        if (isset($_GET["name"]) && isset($_GET["age"])):
+            $_SESSION["name"] = $_GET["name"];
+            $_SESSION["age"] = $_GET["age"];
+        endif;
+    ?>
+</body>
+</html>
+
+
+<?php
+    session_start();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+        echo "Xin chào " . $_SESSION["name"] . "<br/>";
+        echo "Bạn " . $_SESSION["age"] . " tuổi";
+    ?>
+</body>
+</html>
