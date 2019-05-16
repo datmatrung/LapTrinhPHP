@@ -1,3 +1,4 @@
+// Tạo session:
 <?php
     session_start();
 ?>
@@ -25,6 +26,7 @@
 </body>
 </html>
 
+// Sử dụng session:
 <?php
     session_start();
 ?>
@@ -36,8 +38,40 @@
 </head>
 <body>
     <?php
+        if (isset($_SESSION["name"]) && isset($_SESSION["age"])):
         echo "Xin chào " . $_SESSION["name"] . "<br/>";
         echo "Bạn " . $_SESSION["age"] . " tuổi";
+
+        Xem mảng session:
+        echo "<pre>";
+        print_r($_SESSION);
+        echo "</pre>";
+
+        Cập nhật session:
+        $_SESSION["name"] = "Tủ Sách Vàng";
+        $_SESSION["age"] = 10;
+        echo "<pre>";
+        print_r($_SESSION);
+        echo "</pre>";
+    endif;
+    ?>
+</body>
+</html>
+
+// Tắt session:
+<?php
+    session_start();
+?>
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tắt session</title>
+</head>
+<body>
+    <?php
+        session_unset();
+        session_destroy();
     ?>
 </body>
 </html>
