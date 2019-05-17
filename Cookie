@@ -1,0 +1,74 @@
+//Tạo cookie
+<?php
+if($_SERVER['REQUEST_METHOD']==='POST'):
+    setcookie('name',$_POST['name'],time()+86400 );
+    setcookie('age',$_POST['age'],time()+86400 );
+    header('Location: 02.php');
+endif;
+?>
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo cookie</title>
+</head>
+<body>
+<form action="#" method="post" >
+    <label>Họ và tên:</label><br/>
+    <input type="text" name="name"><br/>
+    <label>Tuổi:</label><br/>
+    <input type="number" name="age">
+    <hr/>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+
+//Xem cookie
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Xem cookie</title>
+</head>
+<body>
+<?php
+if (isset($_COOKIE['name']) && isset($_COOKIE['age'])):
+    echo "Xin chào " . $_COOKIE["name"] . "<br/>";
+    echo "Bạn " . $_COOKIE["age"] . " tuổi";
+    //Show cookie:
+    echo "<pre>";
+    print_r($_COOKIE);
+    echo "</pre>";
+    //Update cookie:
+    $_COOKIE["name"] = "Tủ Sách Vàng";
+    $_COOKIE["age"] = 10;
+    echo "<pre>";
+    print_r($_COOKIE);
+    echo "</pre>";
+endif;
+?>
+<a href="03.php">Xóa cookie</a>
+</body>
+</html>
+
+
+//Xóa cookie
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Xóa cookie</title>
+</head>
+<body>
+<?php
+foreach ($_COOKIE as $key => $value):
+    setcookie($key, $value, time()-86400);
+    setcookie($key, $value, time()-86400, '/');
+endforeach;
+?>
+<a href="02.php">Quay lại xem cookie</a>
+</body>
+</html>
