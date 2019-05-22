@@ -57,8 +57,7 @@
     echo $stu_2->showInfo();
 
 3. Lấy giá trị của đối tượng:
-    $tam = $stu_2->getTen();
-    echo $tam;
+    echo $stu_2->getTen() . ' '. $stu_2->getTuoi() . ' tuổi';
 
 4. Xem giá trị của hằng số:
     echo $stu_2::truong; //thông qua đối tượng
@@ -91,7 +90,6 @@
 10. Duyệt mảng với foreach:
     foreach ($danhsach as $stu):
         echo $stu->showInfo() . '<br/>';
-        echo $stu->getTen() . ' '. $stu->getTuoi() . ' tuổi <br/>';
     endforeach;
 
 11. Thêm phần tử vào mảng:
