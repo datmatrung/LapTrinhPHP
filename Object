@@ -1,0 +1,102 @@
+// Tạo file 01.php
+<?php
+    class student {
+        public $ten;
+        public $tuoi;
+        private $ten;
+        private $tuoi;
+        const truong = 'Aptech';
+
+1. Hàm xem thông tin của đối tượng:
+        public function showInfo(){
+            echo $this->ten . ' ' . $this->tuoi . ' tuổi';
+        }
+
+2. Hàm nhập giá trị vào đối tượng:
+        public function setTen($ten){
+            $this->ten = $ten;
+        }
+        public function setTuoi($tuoi){
+            $this->tuoi = $tuoi;
+        }
+
+3. Hàm lấy giá trị của đối tượng:
+        public function getTen(){
+            return $this->ten;
+        }
+        public function getTuoi(){
+            return $this->tuoi;
+        }
+
+4. Hàm dựng trước đối tượng:
+        public function __construct(){
+            $this->ten = 'Chưa có tên';
+            $this->tuoi = 0;
+        }
+
+5. Hàm dựng trước đối tượng có tham số:
+        public function __construct($ten, $tuoi){
+            $this->ten = $ten;
+            $this->tuoi = $tuoi;
+        }
+}
+
+// Tạo file 02.php
+<?php
+    include ('01.php');
+1. Tạo đối tượng với public:
+    $stu_1 = new student();
+    $stu_1->ten = 'Tủ Sách Vàng';
+    $stu_1->tuoi = 10;
+    echo $stu_1->showInfo();
+
+2. Tạo đối tượng với private:
+    $stu_2 = new student();
+    $stu_2->setTen('Đạt Ma Trung');
+    $stu_2->setTuoi(20);
+    echo $stu_2->showInfo();
+
+3. Lấy giá trị của đối tượng:
+    $tam = $stu_2->getTen();
+    echo $tam;
+
+4. Xem giá trị của hằng số:
+    echo $stu_2::truong; //thông qua đối tượng
+    echo student::truong; //thông qua class
+
+5. Tạo đối tượng với contructor:
+    $stu_3 = new student();
+    echo $stu_3->showInfo();
+
+6. Tạo đối tượng với contructor có tham số:
+    $stu_4 = new student('Trung', 35);
+    echo $stu_4->showInfo();
+
+7. Tạo đối tượng thông qua set/get:
+    $stu_5 = new student(null, null);
+    $stu_5->setTen('Tâm');
+    $stu_5->setTuoi(15);
+    echo $stu_5->showInfo();
+
+8. Tạo mảng chứa các đối tượng:
+    $stu_6 = new student('Tủ', 10);
+    $stu_7 = new student('Sách', 20);
+    $danhsach = [$stu_6, $stu_7];
+
+9. Duyệt mảng với print_r:
+    echo '<pre>';
+    print_r($danhsach);
+    echo '</pre>';
+
+10. Duyệt mảng với foreach:
+    foreach ($danhsach as $stu):
+        echo $stu->showInfo() . '<br/>';
+        echo $stu->getTen() . ' '. $stu->getTuoi() . ' tuổi <br/>';
+    endforeach;
+
+11. Thêm phần tử vào mảng:
+    $stu_8 = new student('Vàng', 30);
+    $danhsach[] = $stu_8;
+    foreach ($danhsach as $stu):
+        echo $stu->showInfo() . '<br/>';
+    endforeach;
