@@ -8,43 +8,43 @@ CREATE TABLE LoaiTaiKhoan(
 );
 
 CREATE TABLE LoaiSanPham(
-	MaLoaiSanPham	  INT PRIMARY KEY NOT NULL,
+	MaLoaiSanPham	INT PRIMARY KEY NOT NULL,
 	TenLoaiSanPham	VARCHAR(64) NOT NULL,
-	BiXoa		        BIT NOT NULL
+	BiXoa		BIT NOT NULL
 );
 
 CREATE TABLE HangSanXuat(
-	MaHangSanXuat	  INT PRIMARY KEY NOT NULL,
+	MaHangSanXuat	INT PRIMARY KEY NOT NULL,
 	TenHangSanXuat	VARCHAR(64) NOT NULL,
-	BiXoa		        BIT NOT NULL
+	BiXoa		BIT NOT NULL
 );
 
 CREATE TABLE TinhTrang(
-	MaTinhTrang	  INT PRIMARY KEY NOT NULL,
+	MaTinhTrang	INT PRIMARY KEY NOT NULL,
 	TenTinhTrang	VARCHAR(45) NOT NULL
 );
 
 CREATE TABLE TaiKhoan(
 	MaTaiKhoan	INT PRIMARY KEY NOT NULL,
 	TenDangNhap	VARCHAR(30) NOT NULL, 
-	MatKhau		  VARCHAR(30) NOT NULL, 
+	MatKhau		VARCHAR(30) NOT NULL, 
 	TenHienThi	VARCHAR(64) NOT NULL, 
-	DiaChi		  VARCHAR(256),
+	DiaChi		VARCHAR(256),
 	SoDienThoai	VARCHAR(11) NOT NULL,
-	Email		    VARCHAR(64) NOT NULL, 
-	BiXoa		    BIT NOT NULL, 
+	Email		VARCHAR(64) NOT NULL, 
+	BiXoa		BIT NOT NULL, 
 	MaLoaiTaiKhoan	INT NOT NULL
 );
 
 CREATE TABLE SanPham(
-	MaSanPham	  INT PRIMARY KEY NOT NULL,
+	MaSanPham	INT PRIMARY KEY NOT NULL,
 	TenSanPham	VARCHAR(256) NOT NULL, 
-	HinhURL		  VARCHAR(256) NOT NULL, 
+	HinhURL		VARCHAR(256) NOT NULL, 
 	GiaSanPham	BIGINT NOT NULL, 
 	SoLuongTon	INT NOT NULL, 
 	SoLuongBan	INT NOT NULL, 
-	SoLuocXem	  INT NOT NULL, 
-	BiXoa		    BIT NOT NULL, 
+	SoLuocXem	INT NOT NULL, 
+	BiXoa		BIT NOT NULL, 
 	MaLoaiSanPham	INT NOT NULL, 
 	MaHangSanXuat	INT NOT NULL
 );
@@ -53,14 +53,14 @@ CREATE TABLE DonDatHang(
 	MaDonDatHang	VARCHAR(9) PRIMARY KEY NOT NULL, 
 	NgayLapPhieu	DATETIME NOT NULL, 
 	TongThanhTien	INT NOT NULL, 
-	MaTaiKhoan	  INT NOT NULL, 
-	MaTinhTrang	  INT NOT NULL
+	MaTaiKhoan	INT NOT NULL, 
+	MaTinhTrang	INT NOT NULL
 );
 
 CREATE TABLE ChiTietDonDatHang(
 	MaChiTietDonDatHang	VARCHAR(11) PRIMARY KEY NOT NULL, 
-	SoLuong			  INT NOT NULL, 
-	GiaBan			  INT NOT NULL, 
-	MaDonDatHang	VARCHAR(9) NOT NULL, 
-	MaSanPham		  INT NOT NULL
+	SoLuong			INT NOT NULL, 
+	GiaBan			INT NOT NULL, 
+	MaDonDatHang		VARCHAR(9) NOT NULL, 
+	MaSanPham		INT NOT NULL
 );
