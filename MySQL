@@ -1,6 +1,7 @@
-// Tạo bảng
+// Tạo database
 CREATE DATABASE QL_SanPham CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE QL_SanPham;
+
+// Tạo bảng
 CREATE TABLE LoaiTaiKhoan(
 	MaLoaiTaiKhoan	INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	TenLoaiTaiKhoan	VARCHAR(30) NOT NULL
