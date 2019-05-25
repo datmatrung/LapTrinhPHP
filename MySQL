@@ -1,7 +1,7 @@
-// Tạo database
+1. Tạo database
 CREATE DATABASE QL_SanPham CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-// Tạo bảng
+2. Tạo bảng
 CREATE TABLE LoaiTaiKhoan(
 	MaLoaiTaiKhoan	INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	TenLoaiTaiKhoan	VARCHAR(30) NOT NULL
@@ -58,7 +58,7 @@ CREATE TABLE ChiTietDonDatHang(
 	MaSanPham		INT NOT NULL
 );
 
-// Liên kết bảng
+3. Liên kết bảng
 ALTER TABLE TaiKhoan ADD CONSTRAINT fk_TaiKhoan_LoaiTaiKhoan 
 	FOREIGN KEY (MaLoaiTaiKhoan) REFERENCES LoaiTaiKhoan (MaLoaiTaiKhoan);
 ALTER TABLE SanPham ADD CONSTRAINT fk_SanPham_LoaiSanPham 
@@ -74,7 +74,7 @@ ALTER TABLE ChiTietDonDatHang ADD CONSTRAINT fk_ChiTietDonDatHang_DonDatHang
 ALTER TABLE ChiTietDonDatHang ADD CONSTRAINT fk_ChiTietDonDatHang_SanPham 
 	FOREIGN KEY (MaSanPham) REFERENCES SanPham (MaSanPham);
 	
-// Nhập dữ liệu vào bảng
+4. Nhập dữ liệu vào bảng
 INSERT INTO HangSanXuat (TenHangSanXuat, BiXoa) VALUES
 	('Revell', 0), ('Lego', 0), ('Lamaze', 0), ('vTech', 0), ('Rastar', 0), ('Syma', 0);
 INSERT INTO LoaiSanPham (TenLoaiSanPham, BiXoa) VALUES
