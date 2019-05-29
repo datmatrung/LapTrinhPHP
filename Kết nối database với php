@@ -47,7 +47,7 @@ Nhập dữ liệu vào bảng:
     $conn->close();
 
 Xóa dữ liệu trong bảng:
-    $query = "delete from khachhang where id=5";
+    $query = "delete from khachhang where id=1";
     $conn->query($query);
     echo "Delete success";
     $conn->close();
