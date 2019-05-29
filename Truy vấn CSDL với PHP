@@ -1,4 +1,4 @@
-Tạo database:
+1. Tạo database:
     CREATE DATABASE muaban CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
     USE muaban;
     CREATE TABLE khachhang(
@@ -15,24 +15,24 @@ Tạo database:
     ALTER TABLE hoadon ADD CONSTRAINT fk_hoadon_khachhang
         FOREIGN KEY (idkhachhang) REFERENCES khachhang(id);
 
-Thông tin database:
+2. Thông tin database:
     $servername = "localhost:3306";
     $database = "muaban";
     $username = "datmatrung";
     $password = "123456";
 
-Kết nối database với phương thức MySQLi (MySQL Improved)
+Truy vấn CSDL với phương thức MySQLi (MySQL Improved)(Dùng cho WordPress)
     $conn = mysqli_connect($servername, $username, $password, $database);
     mysqli_set_charset($conn, "UTF8");
-    if (!$conn):
+    if (mysqli_connect_errno()):
         exit("Connection failed: " . mysqli_connect_error());
     endif;
     echo "Connected successfully";
     mysqli_close($conn);
 
-Kết nối database với phương thức PDO (PHP Data Object)
+Truy vấn CSDL với phương thức PDO (PHP Data Object)(Dùng cho tất cả)
     $conn = new mysqli($servername, $username, $password, $database);
-    mysqli_set_charset($conn, "UTF8");
+    $conn->set_charset("UTF8");
     if ($conn->connect_errno):
         exit("Connection failed: " . $conn->connect_error);
     endif;
