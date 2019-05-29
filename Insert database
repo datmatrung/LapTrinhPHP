@@ -1,0 +1,53 @@
+Tạo database:
+    CREATE DATABASE muaban CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    USE muaban;
+    CREATE TABLE khachhang(
+        id int PRIMARY KEY AUTO_INCREMENT,
+        fullname varchar(50),
+        gender tinyint(1),
+        dob date
+    );
+    CREATE TABLE hoadon(
+        id int PRIMARY KEY AUTO_INCREMENT,
+        totalmoney bigint,
+        idkhachhang int
+    );
+    ALTER TABLE hoadon ADD CONSTRAINT fk_hoadon_khachhang
+        FOREIGN KEY (idkhachhang) REFERENCES khachhang(id);
+
+Thông tin database:
+    $servername = "localhost:3306";
+    $database = "muaban";
+    $username = "datmatrung";
+    $password = "123456";
+
+Kết nối database với phương thức MySQLi (MySQL Improved)
+    $conn = mysqli_connect($servername, $username, $password, $database);
+    mysqli_set_charset($conn, "UTF8");
+    if (!$conn):
+        exit("Connection failed: " . mysqli_connect_error());
+    endif;
+    echo "Connected successfully";
+    mysqli_close($conn);
+
+Kết nối database với phương thức PDO (PHP Data Object)
+    $conn = new mysqli($servername, $username, $password, $database);
+    mysqli_set_charset($conn, "UTF8");
+    if ($conn->connect_errno):
+        exit("Connection failed: " . $conn->connect_error);
+    endif;
+    echo "Connected successfully";
+    $conn->close();
+
+Nhập dữ liệu vào bảng:
+    $query = "insert into khachhang(fullname, gender, dob)
+              values ('Đạt Ma Trung', 1, convert ('1982-07-05', date))";
+    $conn->query($query);
+    echo "Bạn vừa mới insert vào id = " . $conn->insert_id;
+    $conn->close();
+
+Xóa dữ liệu trong bảng:
+    $query = "delete from khachhang where id=5";
+    $conn->query($query);
+    echo "Delete success";
+    $conn->close();
