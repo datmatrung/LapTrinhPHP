@@ -32,7 +32,7 @@
         <br/>
         <input type="text" name="fullname" maxlength="50" minlength="2" required title="Vui lòng nhập đúng">
         <br/>
-        <label for="genger">Chọn giới tính:</label>
+        <label for="gender">Chọn giới tính:</label>
         <br/>
         <select name="gender">
             <option value="0">Nữ</option>
