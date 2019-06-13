@@ -1,0 +1,37 @@
+<?php
+$conn = new mysqli('localhost', 'datmatrung', '123456', 'muaban');
+$conn->set_charset('utf8');
+if($conn->connect_errno):
+    exit('error '. $conn->connect_error);
+endif;
+
+//Câu truy vấn xem tất cả
+$query = "select * from khachhang";
+$resultSet=$conn->query($query);
+if($resultSet->num_rows>0):
+    while($row = $resultSet->fetch_assoc()):
+        echo $row['fullname'] . ' ' . $row['dob'] . '<br/>';
+    endwhile;
+endif;
+
+//Câu truy vấn có điều kiện
+$query = "select * from khachhang where fullname=? or fullname=?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("ss",$full1, $full2);
+$full1='Tủ Sách Vàng';
+$full2='Đạt Ma Trung';
+$stmt->execute();
+
+//Lấy dữ liệu theo từng cột
+$stmt->bind_result($id, $fullname, $gender, $dob);
+while($stmt->fetch()):
+    echo $id . ' ' . $fullname . ' ' . $gender . ' ' .$dob . '<br/>';
+endwhile;
+
+//Lấy dữ liệu ở tất cả các cột
+$resultSet = $stmt->get_result();
+if($resultSet->num_rows>0):
+    while($row = $resultSet->fetch_assoc()):
+        echo $row['fullname'] . ' ' . $row['dob'] . '<br/>';
+    endwhile;
+endif;
