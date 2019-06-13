@@ -46,7 +46,7 @@ $stmt = $db->selectData($statement);
     <title>Select Database</title>
 </head>
 <body>
-<table border="1">
+<table border="1" cellspacing="0">
     <tr>
         <th>ID</th>
         <th>Tên khách hàng</th>
