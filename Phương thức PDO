@@ -18,10 +18,10 @@ class Database{
     {
         $this->pdo = null;
     }
-    public function selectData($statement)
+    public function selectData($query)
     {
         try{
-            $this->stmt = $this->pdo->prepare($statement);
+            $this->stmt = $this->pdo->prepare($query);
             $this->stmt->execute();
             return $this->stmt;
         }catch (Exception $e){
@@ -29,11 +29,13 @@ class Database{
         }
     }
 }
+
 //Tạo đối tượng có sử dụng class ở trên
 $db = new Database();
-$statement = "select * from khachhang";
-$stmt = $db->selectData($statement);
+$query = "select * from khachhang";
+$stmt = $db->selectData($query);
 ?>
+
 <!doctype html>
 <html>
 <head>
