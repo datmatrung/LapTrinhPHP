@@ -1,0 +1,88 @@
+<?php
+class ShowPhp{
+    static function showMessage($message){
+        echo "<script>alert(\"$message\");</script>";
+    }
+}
+class Database{
+    private $dns = "mysql:host=localhost; dbname=muaban; charset=utf8";
+    private $username = "datmatrung";
+    private $password = "123456";
+    private $pdo;
+    private $stmt;
+    public function __construct(){
+        try{
+            $this->pdo = new PDO($this->dns, $this->username, $this->password);
+        }
+        catch(Exception $e){
+            ShowPhp::showMessage($e->getMessage());
+        }
+    }
+    public function closeConn(){
+        $this->pdo = null;
+    }
+    public function selectData($query){
+        try{
+            $this->stmt = $this->pdo->prepare($query);
+            $this->stmt->execute();
+            return $this->stmt;
+        }catch (Exception $e){
+            ShowPhp::showMessage($e->getMessage());
+        }
+    }
+    public function selectDataParam($query, $param){
+        try{
+            $this->stmt = $this->pdo->prepare($query);
+            $this->stmt->execute($param);
+            return $this->stmt;
+        }catch (Exception $e){
+            echo $e->getMessage();
+        }
+    }
+}
+$db = new Database();
+if($_SERVER['REQUEST_METHOD']==='POST'):
+    $query = "select * from khachhang where fullname like ?";
+    $param = ["%{$_POST['search']}%"];
+    $stmt = $db->selectDataParam($query, $param);
+else:
+    $query = "select * from khachhang";
+    $stmt= $db->selectData($query);
+endif;
+?>
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Select Database</title>
+</head>
+<body>
+<form action="#" method="post">
+    <label for="search">Tìm kiếm:</label><br/>
+    <input type="search" name="search" placeholder="Nhập từ khóa cần tìm" required>
+    <hr/>
+    <input type="submit" value="Search">
+</form>
+<br/>
+<table border="1" cellspacing="0">
+    <tr>
+        <th>ID</th>
+        <th>Tên khách hàng</th>
+        <th>Giới tính</th>
+        <th>Ngày sinh</th>
+    </tr>
+    <?php while($khachhang = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+        <tr>
+            <td><?php echo $khachhang['id']?></td>
+            <td><?= $khachhang['fullname']?></td>
+            <td><?= $khachhang['gender']?></td>
+            <td><?= $khachhang['dob']?></td>
+        </tr>
+    <?php
+    endwhile;
+    $db->closeConn();
+    ?>
+</table>
+</body>
+</html>
