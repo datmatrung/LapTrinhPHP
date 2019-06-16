@@ -15,6 +15,6 @@ insert into product(name_pro, price, quantity, description_pro, photo, status_pr
 ('xà bông', 2000, 50, 'dùng để rửa tay', 'xabong.jpg', 1, '2019-06-15'),
 ('khăn tắm', 3000, 20, 'dùng để tắm', 'khantam.jpg', 1, '2019-06-16'),
 ('dầu gội đầu', 6000, 30, 'dùng để gội đầu', 'daugoidau.jpg', 1, '2019-06-17'),
-('sữa tắm', 7000, 10, 'dùng để tắm', 'sữatam.jpg', 1, '2019-06-18'),
+('sữa tắm', 7000, 10, 'dùng để tắm', 'suatam.jpg', 1, '2019-06-18'),
 ('bột giặt', 9000, 40, 'dùng để giặt đồ', 'botgiat.jpg', 1, '2019-06-19'),
 ('kem đánh răng', 3000, 30, 'dùng để đánh răng', 'kemdanhrang.jpg', 1, '2019-06-20');
