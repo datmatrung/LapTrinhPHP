@@ -1,0 +1,20 @@
+1. Tạo bảng:
+create table product(
+  id int primary key auto_increment,
+  name_pro varchar(250),
+  price double,
+  quantity int,
+  description_pro text,
+  photo varchar(250),
+  status_pro tinyint(1),
+  create_date date
+);
+
+2. Nhập bảng:
+insert into product(name_pro, price, quantity, description_pro, photo, status_pro, create_date) values
+('xà bông', 2000, 50, 'dùng để rửa tay', 'xabong.jpg', 1, '2019-06-15'),
+('khăn tắm', 3000, 20, 'dùng để tắm', 'khantam.jpg', 1, '2019-06-16'),
+('dầu gội đầu', 6000, 30, 'dùng để gội đầu', 'daugoidau.jpg', 1, '2019-06-17'),
+('sữa tắm', 7000, 10, 'dùng để tắm', 'sữatam.jpg', 1, '2019-06-18'),
+('bột giặt', 9000, 40, 'dùng để giặt đồ', 'botgiat.jpg', 1, '2019-06-19'),
+('kem đánh răng', 3000, 30, 'dùng để đánh răng', 'kemdanhrang.jpg', 1, '2019-06-20');
