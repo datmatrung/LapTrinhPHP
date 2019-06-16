@@ -72,12 +72,14 @@ endif;
         <th>Giới tính</th>
         <th>Ngày sinh</th>
     </tr>
-    <?php while($khachhang = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+    <?php while($khachhang = $stmt->fetch(PDO::FETCH_ASSOC)):
+        extract($khachhang);
+    ?>
         <tr>
-            <td><?php echo $khachhang['id']?></td>
-            <td><?= $khachhang['fullname']?></td>
-            <td><?= $khachhang['gender']?></td>
-            <td><?= $khachhang['dob']?></td>
+            <td><?= $id?></td>
+            <td><?= $fullname?></td>
+            <td><?= $gender?></td>
+            <td><?= $dob?></td>
         </tr>
     <?php
     endwhile;
