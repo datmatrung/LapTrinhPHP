@@ -16,7 +16,6 @@ else:
     $query = "select * from khachhang";
     $stmt= $db->selectData($query);
 endif;
-?>
 
 3. Viết hàm param:
 public function selectDataParam($query, $param)
