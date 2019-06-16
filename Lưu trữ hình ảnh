@@ -18,3 +18,23 @@ insert into product(name_pro, price, quantity, description_pro, photo, status_pr
 ('sữa tắm', 7000, 10, 'dùng để tắm', 'suatam.jpg', 1, '2019-06-18'),
 ('bột giặt', 9000, 40, 'dùng để giặt đồ', 'botgiat.jpg', 1, '2019-06-19'),
 ('kem đánh răng', 3000, 30, 'dùng để đánh răng', 'kemdanhrang.jpg', 1, '2019-06-20');
+
+3. Tiêu đề:
+<th>ID</th>
+<th>Name product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Description</th>
+<th>Photo</th>
+<th>Status</th>
+<th>Create Date</th>
+
+4. Nhập vào ô:
+<td><?= $id ?></td>
+<td><?= $name_pro ?></td>
+<td><?= $price ?></td>
+<td><?= $quantity ?></td>
+<td><?= $description_pro ?></td>
+<td><img height="100" width="auto" src="images/<?=$photo?>"/></td>
+<td><?= $status_pro ?></td>
+<td><?= $create_date ?></td>
