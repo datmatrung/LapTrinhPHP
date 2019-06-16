@@ -16,7 +16,7 @@ class Database{
             $this->pdo = new PDO($this->dns, $this->username, $this->password);
         }
         catch(Exception $e){
-            echo $e->getMessage();
+            ShowPhp::showMessage($e->getMessage());
         }
     }
     public function closeConn()
@@ -30,7 +30,7 @@ class Database{
             $this->stmt->execute();
             return $this->stmt;
         }catch (Exception $e){
-            echo $e->getMessage();
+            ShowPhp::showMessage($e->getMessage());
         }
     }
 }
