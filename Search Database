@@ -17,3 +17,15 @@ else:
     $stmt= $db->selectData($query);
 endif;
 ?>
+
+3. Viết hàm param:
+public function selectDataParam($query, $param)
+    {
+        try{
+            $this->stmt = $this->pdo->prepare($query);
+            $this->stmt->execute($param);
+            return $this->stmt;
+        }catch (Exception $e){
+            ShowPhp::showMessage($e->getMessage());
+        }
+    }
