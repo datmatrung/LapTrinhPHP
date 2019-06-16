@@ -1,4 +1,9 @@
 <?php
+class ShowPhp{
+    static function showMessage($message){
+        echo "<script>alert(\"$message\");</script>";
+    }
+}
 class Database{
     private $dns = "mysql:host=localhost; dbname=muaban; charset=utf8";
     private $username = "datmatrung";
