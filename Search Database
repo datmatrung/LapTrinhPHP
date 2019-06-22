@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'):
     $param = ["%{$_POST['search']}%"];
     $stmt = $db->selectDataParam($query, $param);
 else:
-    $query = "select * from khachhang";
+    $query = "select * from product";
     $stmt= $db->selectData($query);
 endif;
 
