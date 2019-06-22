@@ -9,11 +9,11 @@
 
 2. Mệnh đề IF:
 if($_SERVER['REQUEST_METHOD']==='POST'):
-    $query = "select * from product where concat(id, name_pro, price, quantity, description_pro, create_date) like ?";
+    $query = "select * from khachhang where fullname like ?";
     $param = ["%{$_POST['search']}%"];
     $stmt = $db->selectDataParam($query, $param);
 else:
-    $query = "select * from product";
+    $query = "select * from khachhang";
     $stmt= $db->selectData($query);
 endif;
 
