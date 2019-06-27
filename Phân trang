@@ -1,0 +1,33 @@
+1. Nhúng file:
+require_once ("pagination.php");
+
+2. Phân trang:
+$db = new Database();
+$statement = "select id from product";
+$stmt= $db->selectData($statement);
+
+$total = $stmt->rowCount();
+$config = array(
+    'current_page'  => isset($_GET['page']) ? $_GET['page'] : 1, // Trang hiện tại
+    'total_record'  => $total, // Tổng số record
+    'limit'         => 5,// limit
+    'link_full'     => 'index.php?page={page}',// Link full có dạng như sau: domain/com/page/{page}
+    'link_first'    => 'index.php',// Link trang đầu tiên
+    'range'         => 9 // Số button trang bạn muốn hiển thị
+);
+
+$paging = new Pagination();
+$paging->init($config);
+
+$statement = "select * from product " .$paging->get_limit();
+$stmt= $db->selectData($statement);
+
+3. Hiển thị số trang:
+<?php echo $paging->html();?>
+
+4. Định dạng CSS:
+<style>
+    li{float:left; margin: 3px; border: solid 1px gray;list-style: none;}
+    a{padding: 5px;text-decoration: none;}
+    span{display:inline-block; padding: 0px 3px; background: blue; color:white }
+</style>
