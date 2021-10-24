@@ -1,4 +1,4 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", "", "ql_sanpham");
+    $conn = mysqli_connect("localhost", "username", "password", "database");
     mysqli_set_charset($conn, "UTF8");
 ?>
