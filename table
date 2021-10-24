@@ -1,0 +1,11 @@
+CREATE TABLE user (
+  id int(11) PRIMARY KEY AUTO_INCREMENT,
+  username varchar(255),
+  password varchar(255),
+  level int(11)
+)
+
+INSERT INTO user (id, username, password, level) VALUES
+(1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 0),
+(2, 'trung', 'e10adc3949ba59abbe56e057f20f883e', 1),
+(3, 'thuy', '202cb962ac59075b964b07152d234b70', 1)
