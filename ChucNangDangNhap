@@ -1,3 +1,6 @@
+- Gắn session trên trang chủ:
+  session_start();
+  if (!isset($_SESSION["user"])) header("location:login.php");
 - Tạo bảng và nhập dữ liệu vào bảng:
 https://github.com/datmatrung/LapTrinhPHP/blob/master/table
 - Tạo trang cấu hình:
