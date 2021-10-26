@@ -11,7 +11,7 @@ https://github.com/datmatrung/LapTrinhPHP/blob/master/login.php
 - Tạo trang xác nhận đăng nhập:
 https://github.com/datmatrung/LapTrinhPHP/blob/master/login_submit.php
 - Gắn session lên trang index.php:
-  session_start();
-  if (!isset($_SESSION["user"])) header("location:login.php");
+  <?php session_start();
+  if (!isset($_SESSION["user"])) header("location:login.php");?>
 - Tạo trang đăng xuất:
 https://github.com/datmatrung/LapTrinhPHP/blob/master/logout.php
