@@ -10,8 +10,8 @@ https://github.com/datmatrung/LapTrinhPHP/blob/master/register_submit.php
 https://github.com/datmatrung/LapTrinhPHP/blob/master/login.php
 - Tạo trang xác nhận đăng nhập:
 https://github.com/datmatrung/LapTrinhPHP/blob/master/login_submit.php
-- Tạo trang đăng xuất:
-https://github.com/datmatrung/LapTrinhPHP/blob/master/logout.php
-- Gắn session trên trang chủ:
+- Gắn session lên trang index.php:
   session_start();
   if (!isset($_SESSION["user"])) header("location:login.php");
+- Tạo trang đăng xuất:
+https://github.com/datmatrung/LapTrinhPHP/blob/master/logout.php
