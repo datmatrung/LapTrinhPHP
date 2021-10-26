@@ -13,5 +13,5 @@
             echo "Bạn đã nhập sai username hoặc password";
         }
     }
-    header("location:admin.php");
+    header("location:index.php");
 ?>
