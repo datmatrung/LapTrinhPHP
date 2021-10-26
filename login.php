@@ -22,7 +22,7 @@
                 <td colspan="2">
                     <button type="submit" name="submit">Đăng nhập</button>
                     <button type="reset">Làm mới</button>
-                    <a href="register.php"><button>Đăng ký</button></a>
+                    <button><a href="register.php">Đăng ký</a></button>
                 </td>
             </tr>
         </table>
